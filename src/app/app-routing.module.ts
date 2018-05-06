@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { ToDoComponent } from './to-do/to-do.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
+import { InstrumentsComponent } from './instruments/instruments.component';
+import { LessonsComponent } from './lessons/lessons.component';
 
 
 const routes: Routes = [
   { path: 'todo', component: ToDoComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'instruments', component: InstrumentsComponent },
+  { path: 'lessons', component: LessonsComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];

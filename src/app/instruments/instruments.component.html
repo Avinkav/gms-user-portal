@@ -1,0 +1,24 @@
+<div class="subheading">Borrowed Instruments</div>
+<div class="content-wrapper">
+  <mat-card class="instrument-cards" *ngFor="let instrument of instruments" [class.late-instrument]="instrument.isLate">
+    <mat-card-header>
+      <mat-card-title>{{instrument.name}}<span *ngIf="instrument.isLate"> - Overdue</span></mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{instrument.imageUrl}}">
+    <mat-card-content>
+      <!-- {{instrument.hireCost}} -->
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="subheading">Available Instruments</div>
+<div class="content-wrapper">
+  <mat-card class="instrument-cards" *ngFor="let instrument of instruments" >
+    <mat-card-header>
+      <mat-card-title>{{instrument.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{instrument.imageUrl}}">
+    <mat-card-content>
+      <!-- {{instrument.hireCost}} -->
+    </mat-card-content>
+  </mat-card>
+</div>

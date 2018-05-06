@@ -1,8 +1,8 @@
 <mat-toolbar class="main-toolbar mat-elevation-z4" color="primary">
-    <mat-icon>queue_music</mat-icon> <span>Generic Music School</span>
+    <a (click)="sidenav.toggle()"><mat-icon>queue_music</mat-icon> <span>Generic Music School</span></a>
 </mat-toolbar>
 <mat-sidenav-container class="full-container">
-  <mat-sidenav color="accent" mode="side" opened>
+  <mat-sidenav #sidenav color="accent" mode="side" opened>
     <app-navmenu></app-navmenu>
     <mat-divider [vertical]="true"></mat-divider>
   </mat-sidenav>
@@ -10,6 +10,3 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-

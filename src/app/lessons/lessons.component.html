@@ -1,0 +1,50 @@
+<div class="workspace">
+<mat-accordion>
+    <mat-expansion-panel expanded="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Available Lessons
+          </mat-panel-title>
+          <mat-panel-description>
+            Book a lesson
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-horizontal-stepper linear="true">
+          <mat-step>
+            <ng-template matStepLabel>Select a Teacher</ng-template>
+            Featured Teachers
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Pick a date and time</ng-template>
+            <ng-fullcalendar #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
+              (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)">
+            </ng-fullcalendar>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Hire an Instrument</ng-template>
+            <mat-selection-list role="option">
+              <mat-list-option *ngFor="let i of instruments">
+                <img matListAvatar src="{{i.imageUrl}}" alt="...">
+                <h3 matLine>{{i.name}} {{i.hireCost | currency}} per lesson  </h3>
+                <p matLine></p>
+              </mat-list-option>
+            </mat-selection-list>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Calendar
+        </mat-panel-title>
+        <mat-panel-description>
+          Upcoming lessons
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-fullcalendar #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
+        (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)">
+      </ng-fullcalendar>
+    </mat-expansion-panel>
+</mat-accordion>
+
+</div>

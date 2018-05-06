@@ -1,6 +1,6 @@
-export class TodoItem{
+export class TodoItem {
     id: number;
-    title : string;
+    title: string;
 }
 
 export const TODOS: TodoItem[] = [

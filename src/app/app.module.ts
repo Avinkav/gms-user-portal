@@ -1,21 +1,67 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { ToDoComponent } from './to-do/to-do.component';
-import { TodoService } from './services/todo.service';
-import { MessagesComponent } from './messages/messages.component';
+import {
+  BrowserModule
+} from '@angular/platform-browser';
+import {
+  NgModule
+} from '@angular/core';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  AppComponent
+} from './app.component';
+import {
+  ToDoComponent
+} from './to-do/to-do.component';
+import {
+  TodoService
+} from './services/todo.service';
+import {
+  MessagesComponent
+} from './messages/messages.component';
 
-import { MatSidenavModule, MatButtonModule, MatSnackBarModule, MatListModule,
-  MatCardModule, MatInputModule, MatToolbarModule, MatDividerModule, MatChipsModule, MatIconModule } from '@angular/material';
+import {
+  MatSidenavModule,
+  MatButtonModule,
+  MatSnackBarModule,
+  MatListModule,
+  MatCardModule,
+  MatInputModule,
+  MatToolbarModule,
+  MatDividerModule,
+  MatChipsModule,
+  MatIconModule,
+  MatExpansionModule,
+  MatStepperModule,
+} from '@angular/material';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './/app-routing.module';
-import { RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavmenuComponent } from './navmenu/navmenu.component';
-import { FullCalendarModule } from 'ng-fullcalendar';
-import { ProfileComponent } from './profile/profile.component';
+import {
+  BrowserAnimationsModule
+} from '@angular/platform-browser/animations';
+import {
+  AppRoutingModule
+} from './/app-routing.module';
+import {
+  RouterModule
+} from '@angular/router';
+import {
+  DashboardComponent
+} from './dashboard/dashboard.component';
+import {
+  NavmenuComponent
+} from './navmenu/navmenu.component';
+import {
+  FullCalendarModule
+} from 'ng-fullcalendar';
+import {
+  ProfileComponent
+} from './profile/profile.component';
+import {
+  InstrumentsComponent
+} from './instruments/instruments.component';
+import {
+  LessonsComponent
+} from './lessons/lessons.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +71,8 @@ import { ProfileComponent } from './profile/profile.component';
     DashboardComponent,
     NavmenuComponent,
     ProfileComponent,
+    InstrumentsComponent,
+    LessonsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +88,11 @@ import { ProfileComponent } from './profile/profile.component';
     FullCalendarModule,
     MatToolbarModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
