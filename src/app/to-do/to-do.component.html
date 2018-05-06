@@ -1,0 +1,12 @@
+<mat-card>
+      <mat-form-field>
+            <input *ngIf="selectedItem" matInput [(ngModel)]="selectedItem.title" placeholder="Edit">
+      </mat-form-field>
+</mat-card>
+<mat-card>
+      <mat-list>
+            <mat-list-item *ngFor="let todo of todoItems" (click)="onSelect(todo)">
+                  {{todo.id}} {{todo.title}}
+            </mat-list-item>
+      </mat-list>
+</mat-card>

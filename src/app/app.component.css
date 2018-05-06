@@ -1,0 +1,25 @@
+.mat-toolbar{
+    position: fixed;
+    height: 48px;
+    top:0px;
+    left:0px;
+    right: 0px;
+    z-index: 2;
+    /* box-shadow:0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12); */
+}
+
+.mat-toolbar > span{
+    font-size: 16px;
+}
+
+.full-container{
+    position: absolute;
+    top: 48px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+mat-sidenav-content{
+    padding: 20px;
+}

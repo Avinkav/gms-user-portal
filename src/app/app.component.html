@@ -1,0 +1,15 @@
+<mat-toolbar class="main-toolbar mat-elevation-z4" color="primary">
+    <mat-icon>queue_music</mat-icon> <span>Generic Music School</span>
+</mat-toolbar>
+<mat-sidenav-container class="full-container">
+  <mat-sidenav color="accent" mode="side" opened>
+    <app-navmenu></app-navmenu>
+    <mat-divider [vertical]="true"></mat-divider>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

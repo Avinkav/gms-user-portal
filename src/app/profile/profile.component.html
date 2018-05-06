@@ -1,0 +1,30 @@
+<mat-card>
+  <div class="form-container">
+    <mat-form-field>
+      <input matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="date" placeholder="Date of Birth">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Address">
+    </mat-form-field>
+  </div>
+</mat-card>
+<mat-card class="instrument-card">
+<div class="form-container">
+    <mat-form-field class="demo-chip-list">
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let ins of instruments" [selectable]="selectable" [removable]="removable" (removed)="remove(ins)">
+          {{ins.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Instuments you want to learn..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+    </mat-form-field>
+</div>
+</mat-card>
