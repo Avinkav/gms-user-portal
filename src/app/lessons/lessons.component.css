@@ -1,3 +1,26 @@
 mat-expansion-panel{
     background-color: #f6f6f6;
 }
+.content-wrapper{
+    flex-wrap: nowrap;
+}
+
+.detail-pane{
+    min-width: 300px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    flex-flow: column;
+    flex-grow:1;
+    margin-right: 16px;
+}
+
+#description{
+    text-align: justify;
+    flex-grow: 2;
+}
+
+#calendar{
+    min-width: 400px;
+    max-width: 600px;
+}

@@ -34,4 +34,27 @@ export class MockdataService {
     ]);
   }
 
+  getFreeSlots(): Observable<EventObject[]> {
+    return of([
+      {
+        title  : 'Booked',
+        start  : '2018-05-13T09:00:00+10:00',
+        end : '2018-05-13T16:00:00+10:00',
+        color : 'red'
+      },
+      {
+        title  : 'Free',
+        start  : '2018-05-15T11:00:00+10:00',
+        end : '2018-05-15T14:00:00+10:00',
+        color : 'green',
+      },
+      {
+        title  : 'Free',
+        start  : '2018-05-25T16:00:00+10:00',
+        end : '2018-05-25T20:00:00+10:00',
+        color : 'green',
+      },
+    ]);
+  }
+
 }

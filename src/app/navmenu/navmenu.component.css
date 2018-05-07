@@ -1,9 +1,11 @@
+
+
 .main-nav-link{
     width: 190px;
 }
 
 .mat-icon{
-    color: #555;
+    color: rgba(0, 0, 0, 0.5);
     height: auto !important;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }

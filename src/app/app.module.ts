@@ -33,6 +33,9 @@ import {
   MatIconModule,
   MatExpansionModule,
   MatStepperModule,
+  MatBadgeModule,
+  MatMenuModule,
+  MatTableModule
 } from '@angular/material';
 
 import {
@@ -62,6 +65,8 @@ import {
 import {
   LessonsComponent
 } from './lessons/lessons.component';
+import { MainToolbarComponent } from './main-toolbar/main-toolbar.component';
+import { BillingComponent } from './billing/billing.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +78,8 @@ import {
     ProfileComponent,
     InstrumentsComponent,
     LessonsComponent,
+    MainToolbarComponent,
+    BillingComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +97,10 @@ import {
     MatChipsModule,
     MatIconModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    MatBadgeModule,
+    MatMenuModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

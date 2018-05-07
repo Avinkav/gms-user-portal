@@ -1,5 +1,5 @@
 <div class="content-wrapper">
-<mat-card class="profile-card">
+<mat-card id="profile-picture-card" class="profile-card">
   <img mat-card-image src="{{user.imageUrl}}">
 </mat-card>
 <mat-card class="profile-card">
@@ -27,7 +27,7 @@
     </mat-form-field>
   </div>
 </mat-card>
-<mat-card class="profile-card">
+<mat-card id="preferences-card" class="profile-card">
   <div class="form-container">
     <mat-form-field>
       <mat-chip-list #chipList1>

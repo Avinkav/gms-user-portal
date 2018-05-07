@@ -1,7 +1,7 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    font-size: 12px;
+    font-size: 14px;
   }
   
   .form-container > * {
@@ -9,8 +9,17 @@
   }
 
   .profile-card{
+      min-width: 300px;
+  }
+
+  #profile-picture-card{
       width: 250px;
   }
+
+  #preferences-card{
+    width:350px;
+  }
+
 
   .demo-chip-list {
     width: 100%;

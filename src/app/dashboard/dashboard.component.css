@@ -1,11 +1,5 @@
 
-
-.personal-calendar{
-    max-width: 400px;
-    font-size: 0.6em;
-}
-
-.payment-card{
-    max-width: 300px;
-    max-height: 200px;
+#calendar-card{
+    max-width: 480px;
+    font-size: 0.8em;
 }

@@ -1,7 +1,18 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CalendarComponent } from 'ng-fullcalendar';
-import { Options, EventObject } from 'fullcalendar';
-import { MockdataService } from '../services/mockdata.service';
+import {
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
+import {
+  CalendarComponent
+} from 'ng-fullcalendar';
+import {
+  Options,
+  EventObject
+} from 'fullcalendar';
+import {
+  MockdataService
+} from '../services/mockdata.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +26,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
   events: EventObject[];
 
-  constructor(private mockData: MockdataService) { }
+  constructor(private mockData: MockdataService) {}
 
   ngOnInit() {
     this.mockData.getEvents().subscribe(e => this.events = e);

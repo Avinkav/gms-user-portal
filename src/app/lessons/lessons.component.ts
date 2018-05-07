@@ -7,7 +7,8 @@ import {
   CalendarComponent
 } from 'ng-fullcalendar';
 import {
-  Options
+  Options,
+  EventObject
 } from 'fullcalendar';
 import {
   MockdataService
@@ -15,6 +16,15 @@ import {
 import {
   Instrument
 } from '../models/instrument';
+import {
+  Teacher
+} from '../models/teacher';
+import {
+  CdkTextareaAutosize
+} from '@angular/cdk/text-field';
+import {
+  MatStep
+} from '@angular/material';
 
 @Component({
   selector: 'app-lessons',
@@ -22,24 +32,67 @@ import {
   styleUrls: ['./lessons.component.css']
 })
 export class LessonsComponent implements OnInit {
+
   instruments: Instrument[];
   calendarOptions: Options;
-  @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
+  @ViewChild('bookCalendar') ucCalendar: CalendarComponent;
+  @ViewChild('stepper') stepper;
+  @ViewChild('step1') step1;
+  @ViewChild('step2') step2;
+  events: EventObject[];
+
+  teachers: Teacher[] = [{
+      name: 'Luciano Pavarotti',
+      instruments: ['Opera', 'Theatre']
+    },
+    {
+      name: 'Wolfgang Mozart',
+      instruments: ['Violin', 'Ochestra']
+    },
+    {
+      name: 'Skrillex',
+      instruments: ['Vinyl', 'CDJs']
+    },
+    {
+      name: 'Adele',
+      instruments: ['Pop', 'Rap']
+    },
+  ];
+
+  selectedTeacher: Teacher;
+  selectedDate: Date;
 
   constructor(private mockData: MockdataService) {}
 
   ngOnInit() {
+    this.mockData.getFreeSlots().subscribe(e => this.events = e);
     this.calendarOptions = {
-      editable: true,
+      selectable: true,
       eventLimit: false,
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay,listMonth'
+        right: 'month,agendaWeek,agendaDay'
       },
+      events: this.events
     };
 
     this.mockData.getInstruments().subscribe(i => this.instruments = i);
   }
 
+  clickTeacher(t: Teacher) {
+    this.selectedTeacher = t;
+    this.step1.completed = true;
+    this.stepper.next();
+  }
+
+  eventClick(detail: any) {
+    this.selectedDate = detail.event.start;
+    this.ucCalendar.fullCalendar('changeView', 'agendaDay', detail.event.start);
+  }
+
+  clickNext() {
+    this.step2.completed = true;
+    this.stepper.next();
+  }
 }
