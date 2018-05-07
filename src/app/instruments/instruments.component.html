@@ -1,6 +1,6 @@
 <div class="subheading">Borrowed Instruments</div>
-<div class="content-wrapper">
-  <mat-card class="instrument-cards" *ngFor="let instrument of instruments" [class.late-instrument]="instrument.isLate">
+<div class="content-wrapper ">
+  <mat-card class="instrument-card clickable-card " *ngFor="let instrument of instruments" [class.late-instrument]="instrument.isLate">
     <mat-card-header>
       <mat-card-title>{{instrument.name}}<span *ngIf="instrument.isLate"> - Overdue</span></mat-card-title>
     </mat-card-header>
@@ -12,7 +12,7 @@
 </div>
 <div class="subheading">Available Instruments</div>
 <div class="content-wrapper">
-  <mat-card class="instrument-cards" *ngFor="let instrument of instruments" >
+  <mat-card class="instrument-card" *ngFor="let instrument of instruments" >
     <mat-card-header>
       <mat-card-title>{{instrument.name}}</mat-card-title>
     </mat-card-header>

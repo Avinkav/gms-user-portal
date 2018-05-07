@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css/normalize.css';
+@import '~@angular/material/theming';
+@import "~fullcalendar/dist/fullcalendar.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@include mat-core();
+
+body {
+  color: #444;
+  background: #f2f2f2;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content-wrapper {
+  width: 100%;
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-flex-wrap: wrap;
+  /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+mat-card,
+.subheading {
+  margin-top: 24px;
+  margin-left: 24px;
+}
+
+.clickable-card{
+  @include mat-elevation-transition;
+  @include mat-elevation(2);
+
+  &:hover {
+    @include mat-elevation(8);
+  }
+}
+
+.mat-drawer{
+  background-color: inherit !important;
+  @include mat-elevation(1);
+}
+
+.workspace {
+  padding: 16px;
+}
+
+.pull-right {
+  position: absolute;
+  right: 0px;
+}
+
+.pull-left {
+  position: absolute;
+  left: 0px;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.green {
+  color: green;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+.fc-view-container{
+    background-color:#fff;
+}
+
+.mat-chip{
+  font-size: 0.8em;
+}

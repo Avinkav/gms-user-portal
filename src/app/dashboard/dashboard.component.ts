@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ng-fullcalendar';
-import { Options } from 'fullcalendar';
+import { Options, EventObject } from 'fullcalendar';
+import { MockdataService } from '../services/mockdata.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,12 +10,15 @@ import { Options } from 'fullcalendar';
 })
 export class DashboardComponent implements OnInit {
 
+  public upToDate = true;
   calendarOptions: Options;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
+  events: EventObject[];
 
-  constructor() { }
+  constructor(private mockData: MockdataService) { }
 
   ngOnInit() {
+    this.mockData.getEvents().subscribe(e => this.events = e);
     this.calendarOptions = {
       editable: true,
       eventLimit: false,
@@ -23,6 +27,7 @@ export class DashboardComponent implements OnInit {
         center: 'title',
         right: 'month,agendaWeek,agendaDay,listMonth'
       },
+      events: this.events
     };
   }
 

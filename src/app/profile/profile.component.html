@@ -1,7 +1,11 @@
-<mat-card>
+<div class="content-wrapper">
+<mat-card class="profile-card">
+  <img mat-card-image src="{{user.imageUrl}}">
+</mat-card>
+<mat-card class="profile-card">
   <div class="form-container">
     <mat-form-field>
-      <input matInput placeholder="Name">
+      <input matInput placeholder="Name" [(ngModel)]="user.name">
     </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="Email">
@@ -10,21 +14,41 @@
       <input matInput type="date" placeholder="Date of Birth">
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="Address">
+      <input matInput placeholder="Address Line 1">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Suburb">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="State">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Postcode">
     </mat-form-field>
   </div>
 </mat-card>
-<mat-card class="instrument-card">
-<div class="form-container">
-    <mat-form-field class="demo-chip-list">
-      <mat-chip-list #chipList>
-        <mat-chip *ngFor="let ins of instruments" [selectable]="selectable" [removable]="removable" (removed)="remove(ins)">
+<mat-card class="profile-card">
+  <div class="form-container">
+    <mat-form-field>
+      <mat-chip-list #chipList1>
+        <mat-chip *ngFor="let ins of instruments" [selectable]="selectable" [removable]="removable" (removed)="removeInstrument(ins)">
           {{ins.name}}
           <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
         </mat-chip>
-        <input placeholder="Instuments you want to learn..." [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+        <input placeholder="Instuments you want to learn..." [matChipInputFor]="chipList1" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addInstrument($event)">
       </mat-chip-list>
     </mat-form-field>
-</div>
+    <mat-form-field>
+      <mat-chip-list #chipList2>
+        <mat-chip *ngFor="let l of languages" [selectable]="selectable" [removable]="removable" (removed)="removeLanguage(l)">
+          {{l}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Languages you speak..." [matChipInputFor]="chipList2" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addLanguage($event)">
+      </mat-chip-list>
+    </mat-form-field>
+  </div>
 </mat-card>
+</div>
