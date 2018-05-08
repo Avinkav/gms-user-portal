@@ -1,10 +1,23 @@
 <mat-toolbar class="mat-elevation-z4" color="primary">
-    <a mat-button (click)="sideNav.toggle()"><h1><mat-icon>queue_music</mat-icon> Generic Music School</h1></a>
-    <div class="flex-spacer"></div>
-    <mat-menu #messageMenu="matMenu" overlapTrigger="false" xPosition="before">
-            <a mat-menu-item><span class="caption">John Doe messaged you</span></a>
-            <a mat-menu-item>Solomun messaged you</a>
-    </mat-menu>
-    <a mat-button [matMenuTriggerFor]="messageMenu" ><mat-icon matBadge="5" matBadgeColor="warn">chat</mat-icon></a>
-    <a mat-button><mat-icon>account_box</mat-icon> Jane Doe</a>
+  <a mat-button (click)="sideNav.toggle()">
+    <h1>
+      <mat-icon>queue_music</mat-icon>
+      <span *ngIf="screenSize === 'large'"> Generic Music School</span>
+      <span *ngIf="screenSize === 'small'"> GMS</span>
+    </h1>
+  </a>
+  <div class="flex-spacer"></div>
+  <mat-menu #messageMenu="matMenu" overlapTrigger="false" xPosition="before">
+    <a mat-menu-item>
+      <span class="caption">John Doe messaged you</span>
+    </a>
+    <a mat-menu-item>Solomun messaged you</a>
+  </mat-menu>
+  <a mat-button [matMenuTriggerFor]="messageMenu">
+    <mat-icon matBadge="5" matBadgeColor="warn">chat</mat-icon>
+  </a>
+  <a mat-button>
+    <mat-icon>account_box</mat-icon>
+    <span *ngIf="screenSize === 'large'"> Jane Doe</span>
+  </a>
 </mat-toolbar>

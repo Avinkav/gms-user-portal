@@ -1,9 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~normalize.css/normalize.css';
 @import '~@angular/material/theming';
-@import "~fullcalendar/dist/fullcalendar.css";
+@import 'calendar.scss';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
 @include mat-core();
 
 $font-color: rgba(0, 0, 0, 0.6);
@@ -32,8 +31,8 @@ p{
 
 mat-card,
 .subheading {
-  margin-top: 24px;
-  margin-left: 24px;
+  margin-top: 16px;
+  margin-left: 16px;
 }
 
 .clickable-card{
@@ -70,6 +69,10 @@ mat-card,
 
 .center {
   margin: 0 auto;
+}
+
+.justify{
+  text-align: justify;
 }
 
 .green {

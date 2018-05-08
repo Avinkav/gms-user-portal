@@ -19,17 +19,17 @@ export class MockdataService {
       {
         title  : 'Piano with Mozart',
         start  : '2018-05-15',
-        color : 'green'
+        color : '#3949ab'
       },
       {
         title  : 'Opera with Luciano Pavarotti ',
         start  : '2018-05-13',
-        color : 'red'
+        color : '#e53935'
       },
       {
         title  : 'Opera with Luciano Pavarotti ',
         start  : '2018-05-27',
-        color : 'red'
+        color : '#e53935'
       },
     ]);
   }

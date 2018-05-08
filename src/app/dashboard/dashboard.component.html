@@ -1,9 +1,11 @@
 <div class="content-wrapper">
+    <div class="transition-wrapper">
     <mat-card id="calendar-card" *ngIf="calendarOptions">
         <ng-fullcalendar #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
             (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)">
         </ng-fullcalendar>
     </mat-card>
+    </div>
     <mat-card id="payment-card">
         <mat-card-header>
             <mat-card-title>Payments</mat-card-title>

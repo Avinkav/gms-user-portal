@@ -13,6 +13,7 @@ import {
 import {
   MockdataService
 } from '../services/mockdata.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-dashboard',
@@ -40,6 +41,10 @@ export class DashboardComponent implements OnInit {
       },
       events: this.events
     };
+
+    $('.fc-button').on('click', e => {
+      alert('test');
+    });
   }
 
 }

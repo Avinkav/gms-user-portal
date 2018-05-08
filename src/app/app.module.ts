@@ -67,6 +67,7 @@ import {
 } from './lessons/lessons.component';
 import { MainToolbarComponent } from './main-toolbar/main-toolbar.component';
 import { BillingComponent } from './billing/billing.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { BillingComponent } from './billing/billing.component';
     MatBadgeModule,
     MatMenuModule,
     MatTableModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
