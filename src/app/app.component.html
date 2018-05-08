@@ -1,7 +1,7 @@
 <app-main-toolbar [sideNav]="sideNav"></app-main-toolbar>
 <mat-sidenav-container class="full-container">
   <mat-sidenav #sideNav color="accent" [mode]="sideNavMode">
-    <app-navmenu></app-navmenu>
+    <app-navmenu [sideNav]="sideNav"></app-navmenu>
     <mat-divider [vertical]="true"></mat-divider>
   </mat-sidenav>
   <mat-sidenav-content>

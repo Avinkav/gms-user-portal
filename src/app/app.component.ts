@@ -31,15 +31,14 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.breakpointObserver.observe([
       Breakpoints.Handset,
-      Breakpoints.Tablet,
-      Breakpoints.Small
+      Breakpoints.XSmall
     ]).subscribe(e => {
       if (e.matches) {
       this.activateSmallLayout();
       }
     });
     this.breakpointObserver.observe([
-      Breakpoints.Web
+      '(min-width: 599px)'
     ]).subscribe(e => {
       if (e.matches) {
       this.activateLargeLayout();

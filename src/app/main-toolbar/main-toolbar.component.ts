@@ -18,16 +18,14 @@ export class MainToolbarComponent implements OnInit {
 
   ngOnInit() {
     this.breakpointObserver.observe([
-      Breakpoints.Handset,
-      Breakpoints.Tablet,
-      Breakpoints.Small
+        '(max-width: 600px)'
     ]).subscribe(e => {
       if (e.matches) {
       this.screenSize = 'small';
       }
     });
     this.breakpointObserver.observe([
-      Breakpoints.Web
+      '(min-width: 601px)'
     ]).subscribe(e => {
       if (e.matches) {
         this.screenSize = 'large';

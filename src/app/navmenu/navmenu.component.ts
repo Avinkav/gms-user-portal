@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 
 @Component({
@@ -8,8 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavmenuComponent implements OnInit {
 
+   @Input() sideNav: MatSidenav;
 
+   closeNav() {
+    if (this.sideNav.mode === 'push') {
+      this.sideNav.close();
+    }
+   }
   ngOnInit() {
-
   }
 }

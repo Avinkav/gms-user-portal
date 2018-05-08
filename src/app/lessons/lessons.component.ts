@@ -4,9 +4,6 @@ import {
   ViewChild
 } from '@angular/core';
 import {
-  CalendarComponent
-} from 'ng-fullcalendar';
-import {
   Options,
   EventObject
 } from 'fullcalendar';
@@ -25,6 +22,8 @@ import {
 import {
   MatStep
 } from '@angular/material';
+import * as $ from 'jquery';
+import 'fullcalendar';
 
 @Component({
   selector: 'app-lessons',
@@ -35,7 +34,8 @@ export class LessonsComponent implements OnInit {
 
   instruments: Instrument[];
   calendarOptions: Options;
-  @ViewChild('bookCalendar') ucCalendar: CalendarComponent;
+  containerEl: JQuery;
+
   @ViewChild('stepper') stepper;
   @ViewChild('step1') step1;
   @ViewChild('step2') step2;
@@ -65,17 +65,18 @@ export class LessonsComponent implements OnInit {
   constructor(private mockData: MockdataService) {}
 
   ngOnInit() {
-    this.mockData.getFreeSlots().subscribe(e => this.events = e);
-    this.calendarOptions = {
-      selectable: true,
+    this.mockData.getEvents().subscribe(e => this.events = e);
+    $('#full-calendar').fullCalendar({
       eventLimit: false,
       header: {
         left: 'prev,next today',
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
-      events: this.events
-    };
+      events: this.events,
+      height: 'parent',
+      eventClick: this.eventClick
+    });
 
     this.mockData.getInstruments().subscribe(i => this.instruments = i);
   }
@@ -86,9 +87,8 @@ export class LessonsComponent implements OnInit {
     this.stepper.next();
   }
 
-  eventClick(detail: any) {
-    this.selectedDate = detail.event.start;
-    this.ucCalendar.fullCalendar('changeView', 'agendaDay', detail.event.start);
+  eventClick(eventObj: any) {
+    $('#full-calendar').fullCalendar('changeView', 'agendaDay', eventObj.start);
   }
 
   clickNext() {

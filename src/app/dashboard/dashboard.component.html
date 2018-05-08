@@ -1,27 +1,30 @@
 <div class="content-wrapper">
-    <div class="transition-wrapper">
-    <mat-card id="calendar-card" *ngIf="calendarOptions">
-        <ng-fullcalendar #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
-            (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)">
-        </ng-fullcalendar>
-    </mat-card>
+  <div class="calendar-card card" *ngIf="calendarOptions">
+    <ng-fullcalendar #ucCalendar [options]="calendarOptions" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
+      (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)">
+    </ng-fullcalendar>
+  </div>
+  <div id="payment-card" class="card">
+    <div>Payments</div>
+    <span [class.green]="upToDate">You account is up to date.</span>
+    <div [class.green]="upToDate" style="float:right">$0.00</div>
+    <div>
+      <mat-list dense>
+        <mat-list-item>
+          <span class="pull-left">4 May</span>
+          <span class="center"> Paid</span>
+          <span class="pull-right">$50.00</span>
+        </mat-list-item>
+        <mat-divider [inset]="true"></mat-divider>
+        <mat-list-item>
+          <span class="pull-left">25 April</span>
+          <span class="center"> Paid</span>
+          <span class="pull-right">$40.00</span>
+        </mat-list-item>
+      </mat-list>
     </div>
-    <mat-card id="payment-card">
-        <mat-card-header>
-            <mat-card-title>Payments</mat-card-title>
-            <mat-card-subtitle [class.green]="upToDate">You account is up to date.</mat-card-subtitle>
-            <div [class.green]="upToDate" style="float:right">$0.00</div>
-        </mat-card-header>
-        <mat-card-content>
-            <mat-list dense>
-                <mat-list-item>
-                        <span class="pull-left">4 May</span><span class="center"> Paid</span> <span class="pull-right">$50.00</span>    
-                </mat-list-item>
-                <mat-divider [inset]="true"></mat-divider>
-                <mat-list-item>
-                        <span class="pull-left">25 April</span> <span class="center"> Paid</span> <span class="pull-right">$40.00</span>   
-                </mat-list-item>
-            </mat-list>
-        </mat-card-content>
-    </mat-card>
+  </div>
+  <div class="message-card card">
+    <mat-icon>chat</mat-icon>
+  </div>
 </div>

@@ -35,7 +35,10 @@ import {
   MatStepperModule,
   MatBadgeModule,
   MatMenuModule,
-  MatTableModule
+  MatTableModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatTreeModule,
 } from '@angular/material';
 
 import {
@@ -68,6 +71,7 @@ import {
 import { MainToolbarComponent } from './main-toolbar/main-toolbar.component';
 import { BillingComponent } from './billing/billing.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { BookLessonComponent } from './book-lesson/book-lesson.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +85,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     LessonsComponent,
     MainToolbarComponent,
     BillingComponent,
+    BookLessonComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +107,10 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatBadgeModule,
     MatMenuModule,
     MatTableModule,
-    LayoutModule
+    LayoutModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

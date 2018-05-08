@@ -1,8 +1,33 @@
 
-.instrument-card{
-    max-width: 250px;
+h3{
+    margin-top:16px;
+    margin-left: 16px;
 }
 
-.late-instrument{
-    color:red;
+.content-wrapper{
+    align-items: stretch;
+}
+
+/* Mobile First */
+.flex-card-wrapper{
+    flex-basis: 50%;
+}
+
+
+/* larger than 600px: */
+
+@media only screen and (min-width: 599px) {
+    .flex-card-wrapper{
+        flex-basis: 25%;
+    }
+
+}
+
+/* larger than 1600px: */
+
+@media only screen and (min-width: 1599px) {
+    .flex-card-wrapper{
+        flex-basis: 18%;
+    }
+
 }

@@ -1,21 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import '~normalize.css/normalize.css';
 @import '~@angular/material/theming';
 @import 'calendar.scss';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @include mat-core();
 
-$font-color: rgba(0, 0, 0, 0.6);
+$primary: mat-palette($mat-deep-purple, 600,300, A700);
+$accent:  mat-palette($mat-deep-purple, 600,300, A700);
 
-body {
+// The warn palette is optional (defaults to red).
+$warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+
+$font-color: rgba(0, 0, 0, 0.6);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* body {
   color: $font-color;
   background: #f2f2f2;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-p{
-  color: $font-color;
-}
+/* Mobile-First */
 
 .content-wrapper {
   width: 100%;
@@ -25,32 +42,80 @@ p{
   /* Safari 6.1+ */
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: flex-start;
 }
 
-mat-card,
-.subheading {
-  margin-top: 16px;
+.card {
+  background-color: #fff;
+  position: relative;
+  width: 100%;
   margin-left: 16px;
-}
+  margin-right: 16px;
+  margin-top: 16px;
+  padding: 16px;
 
-.clickable-card{
   @include mat-elevation-transition;
   @include mat-elevation(2);
 
   &:hover {
+    @include mat-elevation(3);
+  }
+
+  &:active {
     @include mat-elevation(8);
   }
 }
 
-.mat-drawer{
-  background-color: inherit !important;
-  @include mat-elevation(1);
+.card img{
+  width: 100%;
+}
+.warn{
+  color:#d50000;
 }
 
-.workspace {
-  padding: 16px;
+
+/* larger than 600px: */
+
+@media only screen and (min-width: 599px) {
+
+  .card{
+    width: auto;
+  }
+
+  .mat-toolbar > .mat-button{
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+}
+
+/* larger than 1008px: */
+
+@media only screen and (min-width: 1008px) {   
+  .card{
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .calendar-card{
+    width: 40%;
+  }
+  
+  .message-card {
+    width: 18%;
+  }
+
+}
+
+.overlay-icon-top-right {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.mat-drawer {
+  background-color: inherit !important;
+  @include mat-elevation(1);
 }
 
 .pull-right {
@@ -63,15 +128,15 @@ mat-card,
   left: 0px;
 }
 
-.flex-spacer{
-  flex-grow:1;
+.flex-spacer {
+  flex-grow: 1;
 }
 
 .center {
   margin: 0 auto;
 }
 
-.justify{
+.justify {
   text-align: justify;
 }
 
@@ -83,10 +148,10 @@ mat-card,
   padding: 0 !important;
 }
 
-.fc-view-container{
-    background-color:#fff;
+.fc-view-container {
+  background-color: #fff;
 }
 
-.mat-chip{
+.mat-chip {
   font-size: 1em;
 }

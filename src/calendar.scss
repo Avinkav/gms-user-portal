@@ -1,17 +1,26 @@
 @import "~fullcalendar/dist/fullcalendar.css";
-
-body .fc{
-    font-size: 0.8em;
+body .fc {
+  font-size: 0.8em;
 }
 
-.fc-event{
-    border-radius: 0px;
+.fc-event {
+  border-radius: 0px;
 }
 
-.fc-day-grid-event{
-    margin:0px;
+.fc-day-grid-event {
+  margin: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  font-weight: 400;
 }
 
-.fc-state-default.fc-corner-left, .fc-state-default.fc-corner-right{
-    border-radius: 0px;
+.fc-day-grid-event .fc-time {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.fc-state-default.fc-corner-left,
+.fc-state-default.fc-corner-right {
+  border-radius: 0px;
 }

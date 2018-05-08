@@ -35,9 +35,9 @@ export class DashboardComponent implements OnInit {
       editable: true,
       eventLimit: false,
       header: {
-        left: 'prev,next today',
+        left: '',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay,listMonth'
+        right: ''
       },
       events: this.events
     };

@@ -1,24 +1,23 @@
-<div class="subheading">Borrowed Instruments</div>
+<h3>Borrowed Instruments</h3>
 <div class="content-wrapper ">
-  <mat-card class="instrument-card clickable-card " *ngFor="let instrument of instruments" [class.late-instrument]="instrument.isLate">
-    <mat-card-header>
-      <mat-card-title>{{instrument.name}}<span *ngIf="instrument.isLate"> - Overdue</span></mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="{{instrument.imageUrl}}">
-    <mat-card-content>
-      <!-- {{instrument.hireCost}} -->
-    </mat-card-content>
-  </mat-card>
+
+<div class="flex-card-wrapper" *ngFor="let instrument of instruments">
+    <div class="instrument-card clickable-card card "  [class.warn]="instrument.isLate">
+      <img src="{{instrument.imageUrl}}">
+      <div>{{instrument.name}}
+          <span *ngIf="instrument.isLate"> - Overdue</span>
+        </div>
+    </div>
 </div>
-<div class="subheading">Available Instruments</div>
-<div class="content-wrapper">
-  <mat-card class="instrument-card" *ngFor="let instrument of instruments" >
-    <mat-card-header>
-      <mat-card-title>{{instrument.name}}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="{{instrument.imageUrl}}">
-    <mat-card-content>
-      <!-- {{instrument.hireCost}} -->
-    </mat-card-content>
-  </mat-card>
+</div>
+<h3>Available Instruments</h3>
+<div class="content-wrapper ">
+
+<div class="flex-card-wrapper" *ngFor="let instrument of instruments">
+    <div class="instrument-card clickable-card card">
+      <img src="{{instrument.imageUrl}}">
+      <div>{{instrument.name}}
+        </div>
+    </div>
+</div>
 </div>

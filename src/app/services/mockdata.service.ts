@@ -19,17 +19,17 @@ export class MockdataService {
       {
         title  : 'Piano with Mozart',
         start  : '2018-05-15',
-        color : '#3949ab'
+        color : '#F44336'
       },
       {
         title  : 'Opera with Luciano Pavarotti ',
-        start  : '2018-05-13',
-        color : '#e53935'
+        start  : '2018-05-20',
+        color : '#FFC107'
       },
       {
-        title  : 'Opera with Luciano Pavarotti ',
-        start  : '2018-05-27',
-        color : '#e53935'
+        title  : 'CDJs with Skrillex ',
+        start  : '2018-05-31',
+        color : '#4CAF50'
       },
     ]);
   }
@@ -40,19 +40,19 @@ export class MockdataService {
         title  : 'Booked',
         start  : '2018-05-13T09:00:00+10:00',
         end : '2018-05-13T16:00:00+10:00',
-        color : 'red'
+        color : '#F44336'
       },
       {
         title  : 'Free',
         start  : '2018-05-15T11:00:00+10:00',
         end : '2018-05-15T14:00:00+10:00',
-        color : 'green',
+        color : '#4CAF50',
       },
       {
         title  : 'Free',
         start  : '2018-05-25T16:00:00+10:00',
         end : '2018-05-25T20:00:00+10:00',
-        color : 'green',
+        color : '#FFC107',
       },
     ]);
   }

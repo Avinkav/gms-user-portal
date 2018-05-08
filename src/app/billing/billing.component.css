@@ -1,5 +1,27 @@
+/* Mobile First */
+
 .mat-table{
-    margin: 20px;
-    min-width: 500px;
-    width: 80%;
+    width:100%;
+}
+
+h3{
+    margin-top:16px;
+    margin-left: 16px;
+}
+
+#recent-bills{
+    width: 100%;
+}
+
+/* larger than 600px: */
+
+@media only screen and (min-width: 600px) {
+    #recent-bills{
+        width: auto;
+        flex-grow:3;
+    }
+
+    #payment-methods{
+       flex-grow:1;
+    }
 }

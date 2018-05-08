@@ -1,10 +1,10 @@
 <mat-toolbar class="mat-elevation-z4" color="primary">
   <a mat-button (click)="sideNav.toggle()">
-    <h1>
+    <span>
       <mat-icon>queue_music</mat-icon>
       <span *ngIf="screenSize === 'large'"> Generic Music School</span>
       <span *ngIf="screenSize === 'small'"> GMS</span>
-    </h1>
+    </span>
   </a>
   <div class="flex-spacer"></div>
   <mat-menu #messageMenu="matMenu" overlapTrigger="false" xPosition="before">
