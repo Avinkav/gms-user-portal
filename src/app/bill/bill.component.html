@@ -1,0 +1,11 @@
+<div class="card">
+  <h4>{{bill.payee}}   <small>{{bill.amount | currency }}</small></h4>
+
+  <mat-icon class="cur-def">
+    <a (click)="close()">clear</a>
+  </mat-icon>
+  <p>
+    {{bill.description}}
+  </p>
+  <div>{{bill.status}}</div>
+</div>

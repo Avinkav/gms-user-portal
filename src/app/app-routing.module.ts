@@ -9,12 +9,12 @@ import { BillingComponent } from './billing/billing.component';
 
 
 const routes: Routes = [
-  { path: 'todo', component: ToDoComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'instruments', component: InstrumentsComponent },
-  { path: 'lessons', component: LessonsComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'billing', component: BillingComponent },
+  { path: 'todo', component: ToDoComponent, data: {state: 'todo'} },
+  { path: 'dashboard', component: DashboardComponent, data: {state: 'dash'} },
+  { path: 'instruments', component: InstrumentsComponent, data: {state: 'intruments'} },
+  { path: 'lessons', component: LessonsComponent , data: {state: 'lessons'} },
+  { path: 'profile', component: ProfileComponent, data: {state: 'profile'} },
+  { path: 'billing', component: BillingComponent, data: {state: 'billing'} },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 

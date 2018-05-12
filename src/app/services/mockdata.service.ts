@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Instrument, instruments } from '../models/instrument';
 import { Observable, of } from 'rxjs';
-import { EventObject } from 'fullcalendar';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class MockdataService {
     return of(instruments);
   }
 
-  getEvents(): Observable<EventObject[]> {
+  getEvents() {
     return of([
       {
         title  : 'Piano with Mozart',
@@ -34,7 +34,7 @@ export class MockdataService {
     ]);
   }
 
-  getFreeSlots(): Observable<EventObject[]> {
+  getFreeSlots() {
     return of([
       {
         title  : 'Booked',

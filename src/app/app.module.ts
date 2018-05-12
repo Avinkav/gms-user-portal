@@ -57,9 +57,6 @@ import {
   NavmenuComponent
 } from './navmenu/navmenu.component';
 import {
-  FullCalendarModule
-} from 'ng-fullcalendar';
-import {
   ProfileComponent
 } from './profile/profile.component';
 import {
@@ -72,6 +69,7 @@ import { MainToolbarComponent } from './main-toolbar/main-toolbar.component';
 import { BillingComponent } from './billing/billing.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BookLessonComponent } from './book-lesson/book-lesson.component';
+import { BillComponent } from './bill/bill.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +84,7 @@ import { BookLessonComponent } from './book-lesson/book-lesson.component';
     MainToolbarComponent,
     BillingComponent,
     BookLessonComponent,
+    BillComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,7 +97,6 @@ import { BookLessonComponent } from './book-lesson/book-lesson.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatSidenavModule,
-    FullCalendarModule,
     MatToolbarModule,
     MatChipsModule,
     MatIconModule,

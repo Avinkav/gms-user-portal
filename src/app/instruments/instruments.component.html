@@ -1,23 +1,25 @@
 <h3>Borrowed Instruments</h3>
-<div class="content-wrapper ">
-
-<div class="flex-card-wrapper" *ngFor="let instrument of instruments">
-    <div class="instrument-card clickable-card card "  [class.warn]="instrument.isLate">
-      <img src="{{instrument.imageUrl}}">
-      <div>{{instrument.name}}
+<div class="container-fluid">
+  <div class="row aa-stretch">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" *ngFor="let instrument of instruments">
+      <div class="instrument-card clickable-card card " [class.warn]="instrument.isLate">
+        <img src="{{instrument.imageUrl}}">
+        <div class="mt-3">{{instrument.name}}
           <span *ngIf="instrument.isLate"> - Overdue</span>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
 <h3>Available Instruments</h3>
-<div class="content-wrapper ">
-
-<div class="flex-card-wrapper" *ngFor="let instrument of instruments">
-    <div class="instrument-card clickable-card card">
-      <img src="{{instrument.imageUrl}}">
-      <div>{{instrument.name}}
+<div class="container-fluid">
+  <div class="row aa-stretch">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" *ngFor="let instrument of instruments">
+      <div class="instrument-card clickable-card card">
+        <img src="{{instrument.imageUrl}}">
+        <div>{{instrument.name}}
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>

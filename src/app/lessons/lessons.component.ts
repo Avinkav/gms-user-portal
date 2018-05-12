@@ -3,10 +3,7 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import {
-  Options,
-  EventObject
-} from 'fullcalendar';
+import 'fullcalendar';
 import {
   MockdataService
 } from '../services/mockdata.service';
@@ -24,22 +21,23 @@ import {
 } from '@angular/material';
 import * as $ from 'jquery';
 import 'fullcalendar';
+import { fadeInAnimation } from '../animations/fadeInAnimation';
 
 @Component({
   selector: 'app-lessons',
+  animations: [fadeInAnimation],
   templateUrl: './lessons.component.html',
   styleUrls: ['./lessons.component.css']
 })
 export class LessonsComponent implements OnInit {
 
   instruments: Instrument[];
-  calendarOptions: Options;
   containerEl: JQuery;
 
   @ViewChild('stepper') stepper;
   @ViewChild('step1') step1;
   @ViewChild('step2') step2;
-  events: EventObject[];
+  events;
 
   teachers: Teacher[] = [{
       name: 'Luciano Pavarotti',
@@ -66,7 +64,7 @@ export class LessonsComponent implements OnInit {
 
   ngOnInit() {
     this.mockData.getEvents().subscribe(e => this.events = e);
-    $('#full-calendar').fullCalendar({
+    $('#lesson-calendar').fullCalendar({
       eventLimit: false,
       header: {
         left: 'prev,next today',

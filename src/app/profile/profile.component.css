@@ -2,6 +2,7 @@
   padding: 0;
 }
 
+
 .form-container {
   display: flex;
   flex-direction: column;
@@ -15,15 +16,6 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 599px) {
-  .flex-card-wrapper {
-    flex-basis: 50%;
-  }
-
-}
-
-@media only screen and (min-width: 1599px) {
-  .flex-card-wrapper {
-    flex-basis: 33%;
-  }
+.mat-icon{
+color:rgba(0,0,0,0.6);
 }

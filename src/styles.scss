@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import '~normalize.css/normalize.css';
+@import '~bootstrap/scss/bootstrap-grid';
 @import '~@angular/material/theming';
 @import 'calendar.scss';
+
 @include mat-core();
 
-$primary: mat-palette($mat-deep-purple, 600,300, A700);
-$accent:  mat-palette($mat-deep-purple, 600,300, A700);
+$primary: mat-palette($mat-grey, 900, 600, 800);
+$accent:  mat-palette($mat-orange, 400, 500, 300);
 
 // The warn palette is optional (defaults to red).
 $warn:    mat-palette($mat-red);
@@ -20,45 +21,67 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 
 $font-color: rgba(0, 0, 0, 0.6);
-*,
-*::before,
-*::after {
+$navbar-height: 64px;
+$padding: 16px * 2;
+
+*, ::before, ::after{
   box-sizing: border-box;
 }
 
-* body {
+html{
+  height:100%;
+}
+
+body {
   color: $font-color;
   background: #f2f2f2;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+  // font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1,h2,h3,h4,h5{
+
+}
+
+img{
+  width:100%; 
+}
+
+.full-container{
+  top: $navbar-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* Mobile-First */
 
-.content-wrapper {
-  width: 100%;
-  display: -webkit-flex;
-  /* Safari */
-  -webkit-flex-wrap: wrap;
-  /* Safari 6.1+ */
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+#navbar-main{
+  position: fixed;
+  height: $navbar-height;
+  top:0px;
+  left:0px;
+  right: 0px;
+  z-index: 2;
+
+  @include mat-elevation(5);
 }
 
 .card {
   background-color: #fff;
   position: relative;
   width: 100%;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-top: 16px;
   padding: 16px;
 
   @include mat-elevation-transition;
   @include mat-elevation(2);
 
+}
+
+.clickable-card{
+
   &:hover {
-    @include mat-elevation(3);
+    @include mat-elevation(6);
   }
 
   &:active {
@@ -66,21 +89,56 @@ $font-color: rgba(0, 0, 0, 0.6);
   }
 }
 
-.card img{
-  width: 100%;
+.cur-def{
+  cursor: default;
 }
+
 .warn{
   color:#d50000;
 }
 
+#profile-picture-card{
+  width:auto;
+}
 
-/* larger than 600px: */
+#profile-picture-card img {
+  width: 100%;
+  // max-height: calc(100vh - #{$navbar-height} - #{$padding});
+}
 
-@media only screen and (min-width: 599px) {
+#lesson-calendar {
+  padding: 16px;
+  height: calc(100vh - #{$navbar-height} - #{$padding});
+}
 
-  .card{
-    width: auto;
+.aa-stretch{
+  align-items: stretch;
+}
+
+.shortcut-icon{
+  font-size: 48px;
+  height: auto !important;
+  width: auto !important;
+  cursor: default;
+  transition: text-shadow 0.2s;
+
+  &:hover{
+    text-shadow: 2px 2px 0px rgba(150, 150, 150, 0.38);
   }
+}
+
+#recentBills table tr{
+  cursor: default;
+  @include mat-elevation-transition;
+
+  &:hover{
+  background: #f2f2f2;
+  }
+}
+
+/* larger than 576px */
+
+@include media-breakpoint-up(sm) {
 
   .mat-toolbar > .mat-button{
     font-size: 18px;
@@ -89,33 +147,27 @@ $font-color: rgba(0, 0, 0, 0.6);
 
 }
 
-/* larger than 1008px: */
+@include media-breakpoint-up(md) {
 
-@media only screen and (min-width: 1008px) {   
+}
+
+/* larger than 992px: */
+
+@include media-breakpoint-up(lg)  {   
   .card{
     padding-left: 24px;
     padding-right: 24px;
   }
-
-  .calendar-card{
-    width: 40%;
-  }
-  
-  .message-card {
-    width: 18%;
-  }
-
 }
 
 .overlay-icon-top-right {
   position: absolute;
   top: 8px;
-  right: 8px;
+  left: 8px;
 }
 
 .mat-drawer {
   background-color: inherit !important;
-  @include mat-elevation(1);
 }
 
 .pull-right {

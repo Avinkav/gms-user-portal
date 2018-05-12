@@ -1,37 +1,35 @@
 import {
   Component,
   OnInit,
-  ViewChild
+  ViewChild,
+  Input
 } from '@angular/core';
-import {
-  CalendarComponent
-} from 'ng-fullcalendar';
-import {
-  Options,
-  EventObject
-} from 'fullcalendar';
+import 'fullcalendar';
 import {
   MockdataService
 } from '../services/mockdata.service';
 import * as $ from 'jquery';
 
+import { range } from 'rxjs';
+import { fadeInAnimation } from '../animations/fadeInAnimation';
+
 @Component({
   selector: 'app-dashboard',
+  animations: [fadeInAnimation],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
-})
+  styleUrls: ['./dashboard.component.css']})
 export class DashboardComponent implements OnInit {
 
   public upToDate = true;
-  calendarOptions: Options;
-  @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
-  events: EventObject[];
+  events;
+  @Input() outlet;
 
-  constructor(private mockData: MockdataService) {}
+  constructor(private mockData: MockdataService) { }
 
   ngOnInit() {
     this.mockData.getEvents().subscribe(e => this.events = e);
-    this.calendarOptions = {
+    $('#full-calendar').fullCalendar({
+      navLinks: true,
       editable: true,
       eventLimit: false,
       header: {
@@ -40,11 +38,13 @@ export class DashboardComponent implements OnInit {
         right: ''
       },
       events: this.events
-    };
+    });
 
     $('.fc-button').on('click', e => {
       alert('test');
     });
   }
-
+  getState() {
+    return 'test';
+  }
 }

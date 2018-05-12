@@ -1,9 +1,11 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material';
+import { routerTransition } from './animations/router-transition';
 
 @Component({
   selector: 'app-root',
+  animations: [ routerTransition ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -45,5 +47,9 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+}
 
 }

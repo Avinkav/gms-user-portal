@@ -1,63 +1,64 @@
-<div class="content-wrapper">
-  <div class="flex-card-wrapper">
-    <div id="profile-picture-card" class="profile-card card">
-      <img src="{{user.imageUrl}}">
-      <mat-icon class="overlay-icon-top-right">insert_photo</mat-icon>
-    </div>
-  </div>
-  <div class="flex-card-wrapper">
-    <div class="profile-card card">
-      <div class="form-container">
-        <mat-form-field>
-          <input matInput placeholder="Name" [(ngModel)]="user.name">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Email">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker touchUi="true" #picker></mat-datepicker>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Address Line 1">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Suburb">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="State">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="Postcode">
-        </mat-form-field>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-xl-4 my-2">
+      <div id="profile-picture-card" class="profile-card card">
+        <img src="{{user.imageUrl}}">
+        <mat-icon class="overlay-icon-top-right">insert_photo</mat-icon>
+      </div>
+      </div>
+    <div class="col-md-6 col-xl-4 my-2">
+      <div class="profile-card card">
+        <div class="form-container">
+          <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="user.name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi="true" #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Address Line 1">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Suburb">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="State">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Postcode">
+          </mat-form-field>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="flex-card-wrapper">
-    <div class="profile-card card">
-      <div class="form-container">
-        <mat-form-field>
-          <mat-chip-list #chipList1>
-            <mat-chip *ngFor="let ins of instruments" [selectable]="selectable" [removable]="removable" (removed)="removeInstrument(ins)">
-              {{ins.name}}
-              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-            </mat-chip>
-            <input placeholder="Instuments you want to learn..." [matChipInputFor]="chipList1" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-              [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addInstrument($event)">
-          </mat-chip-list>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-chip-list #chipList2>
-            <mat-chip *ngFor="let l of languages" [selectable]="selectable" [removable]="removable" (removed)="removeLanguage(l)">
-              {{l}}
-              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-            </mat-chip>
-            <input placeholder="Languages you speak..." [matChipInputFor]="chipList2" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-              [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addLanguage($event)">
-          </mat-chip-list>
-        </mat-form-field>
+    <div class="col-md-6 col-xl-4 my-2">
+      <div class="profile-card card">
+        <div class="form-container">
+          <mat-form-field>
+            <mat-chip-list #chipList1>
+              <mat-chip *ngFor="let ins of instruments" [selectable]="selectable" [removable]="removable" (removed)="removeInstrument(ins)">
+                {{ins.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="Instuments you want to learn..." [matChipInputFor]="chipList1" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addInstrument($event)">
+            </mat-chip-list>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-chip-list #chipList2>
+              <mat-chip *ngFor="let l of languages" [selectable]="selectable" [removable]="removable" (removed)="removeLanguage(l)">
+                {{l}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="Languages you speak..." [matChipInputFor]="chipList2" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addLanguage($event)">
+            </mat-chip-list>
+          </mat-form-field>
+        </div>
       </div>
     </div>
-  </div>
 </div>
