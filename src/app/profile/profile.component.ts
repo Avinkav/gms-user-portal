@@ -10,10 +10,11 @@ import {
   COMMA
 } from '@angular/cdk/keycodes';
 import { routerTransition } from '../animations/router-transition';
+import { editFab } from '../animations/fadeInAnimation';
 
 @Component({
   selector: 'app-profile',
-  animations: [ routerTransition ],
+  animations: [ routerTransition, editFab ],
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })

@@ -5,3 +5,21 @@ export class Teacher {
     name: string;
     instruments: string[];
 }
+
+const teachers: Teacher[] = [{
+    name: 'Luciano Pavarotti',
+    instruments: ['Opera', 'Theatre']
+  },
+  {
+    name: 'Wolfgang Mozart',
+    instruments: ['Violin', 'Ochestra']
+  },
+  {
+    name: 'Skrillex',
+    instruments: ['Vinyl', 'CDJs']
+  },
+  {
+    name: 'Adele',
+    instruments: ['Pop', 'Rap']
+  },
+];

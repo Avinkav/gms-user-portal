@@ -10,7 +10,7 @@
       <div class="section-header">Recent Bills</div>
 
       <div class="card cur-def" [@fadeInAnimation]="">
-        <table mat-table [dataSource]="paymentArray">
+        <table mat-table [dataSource]="payments">
           <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef> Date </th>
             <td mat-cell *matCellDef="let payment"> {{payment.date}} </td>

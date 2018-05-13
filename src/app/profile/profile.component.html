@@ -11,29 +11,35 @@
         <div class="profile-card card">
           <div class="form-container">
             <mat-form-field>
-              <input matInput placeholder="Name" [(ngModel)]="user.name">
+              <input matInput placeholder="Name" [(ngModel)]="user.name" [disabled]="!editEnabled">
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Email">
+              <input matInput placeholder="Email" [disabled]="!editEnabled">
             </mat-form-field>
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Date of Birth">
+              <input matInput [matDatepicker]="picker" placeholder="Date of Birth" [disabled]="!editEnabled">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker touchUi="true" #picker></mat-datepicker>
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Address Line 1">
+              <input matInput placeholder="Address Line 1" [disabled]="!editEnabled">
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Suburb">
+              <input matInput placeholder="Suburb" [disabled]="!editEnabled">
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="State">
+              <input matInput placeholder="State" [disabled]="!editEnabled">
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Postcode">
+              <input matInput placeholder="Postcode" [disabled]="!editEnabled">
             </mat-form-field>
           </div>
+          <button [@editFab]="editEnabled" (click)="editEnabled = !editEnabled" mat-mini-fab>
+            <mat-icon>
+              <span *ngIf="!editEnabled">edit</span>
+              <span *ngIf="editEnabled">done</span>
+            </mat-icon>
+          </button>
         </div>
       </div>
       <div class="col-md-6 col-xl-4 my-2">

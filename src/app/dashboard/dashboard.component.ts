@@ -44,6 +44,7 @@ export class DashboardComponent implements OnInit {
       alert('test');
     });
   }
+ 
   getState() {
     return 'test';
   }

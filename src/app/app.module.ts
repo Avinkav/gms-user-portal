@@ -10,15 +10,6 @@ import {
 import {
   AppComponent
 } from './app.component';
-import {
-  ToDoComponent
-} from './to-do/to-do.component';
-import {
-  TodoService
-} from './services/todo.service';
-import {
-  MessagesComponent
-} from './messages/messages.component';
 
 import {
   MatSidenavModule,
@@ -74,12 +65,11 @@ import { BillComponent } from './bill/bill.component';
 import { NotificationBarComponent } from './notification-bar/notification-bar.component';
 import {Ng2FabSpeedDialModule} from 'ng2-fab-speed-dial';
 import {SmdFabSpeedDialModule} from 'angular-speed-dial';
+import { MessagingComponent } from './messaging/messaging.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToDoComponent,
-    MessagesComponent,
     DashboardComponent,
     NavmenuComponent,
     ProfileComponent,
@@ -89,7 +79,8 @@ import {SmdFabSpeedDialModule} from 'angular-speed-dial';
     BillingComponent,
     BookLessonComponent,
     BillComponent,
-    NotificationBarComponent
+    NotificationBarComponent,
+    MessagingComponent
   ],
   imports: [
     BrowserModule,

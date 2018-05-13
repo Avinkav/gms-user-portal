@@ -1,7 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
+import {
+  Router
+} from '@angular/router';
 import * as $ from 'jquery';
-import { fadeInAnimation } from '../animations/fadeInAnimation';
+import {
+  fadeInAnimation
+} from '../animations/fadeInAnimation';
+import { MockdataService } from '../services/mockdata.service';
 
 @Component({
   selector: 'app-billing',
@@ -14,23 +23,23 @@ export class BillingComponent implements OnInit {
   @ViewChild('row') row;
   columnsToDisplay = ['date', 'payee', 'status', 'amount'];
 
-  paymentArray = [
-    { id: 1, date: '15-Apr-2018', payee: 'Dr. Hugo Strange', status: 'Overdue', amount: 50, description: 'You took Violin classes' },
-    { id: 2, date: '05-Apr-2018', payee: 'Dr. Albert Einstein', status: 'Paid', amount: 299792.458, description: 'You took General Music Thoery of Relativity classes' }
-  ];
+  payments;
+   selectedBill;
 
-  selectedBill = this.paymentArray[0];
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private mockDataService: MockdataService) {}
 
   close() {
-    $('#billDetail').slideUp(() => { $('#recentBills').slideDown(); });
+    $('#billDetail').slideUp(() => {
+      $('#recentBills').slideDown();
+    });
 
   }
 
   onRowClick(row, event) {
     console.log(event);
-    if (this.selectedBill === row && $('#billDetail').css('display') === 'block') { return; }
+    if (this.selectedBill === row && $('#billDetail').css('display') === 'block') {
+      return;
+    }
     $('#recentBills').slideUp(() => {
       $('#billDetail').slideUp(() => {
         this.selectedBill = row;
@@ -40,7 +49,8 @@ export class BillingComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.mockDataService.getPayments().subscribe(p => this.payments = p);
+    this.selectedBill = this.payments[0];
   }
 
 }
