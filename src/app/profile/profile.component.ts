@@ -9,9 +9,11 @@ import {
   ENTER,
   COMMA
 } from '@angular/cdk/keycodes';
+import { routerTransition } from '../animations/router-transition';
 
 @Component({
   selector: 'app-profile',
+  animations: [ routerTransition ],
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
@@ -36,7 +38,7 @@ export class ProfileComponent implements OnInit {
 
   public user = {
     name: 'Jane Doe',
-    imageUrl: 'https://orig00.deviantart.net/3ac4/f/2018/125/2/8/study_03___portrait_by_kabupato-dcarjpj.jpg'
+    imageUrl: '../assets/portrait1.jpg'
   };
 
   public languages = ['Swahili', 'Sanskrit', 'Latin'];

@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row">
 
-      <div id="billDetail" class="col-md-10 my-3">
-      <div class="col-md-6 my-3">
+      <div id="billDetail" class="col-md-9 my-3">
+      <div class="col-md-8 my-3">
       <app-bill  [bill]="selectedBill" [closeHandler]="close"></app-bill>
       </div>
       </div>
-      <div id="recentBills" class="col-md-10 my-3">
-      <h3>Recent Bills</h3>
+      <div id="recentBills" class="col-md-9 my-3">
+      <div class="section-header">Recent Bills</div>
 
       <div class="card cur-def" [@fadeInAnimation]="">
         <table mat-table [dataSource]="paymentArray">
@@ -32,12 +32,17 @@
         </table>
       </div>
     </div>
-    <div class="col-md-2 my-3">
-      <div id="payment-methods">
-        <h3>Payment Methods</h3>
-        <div class="card cur-def" [@fadeInAnimation]="">
-          Paypal Account
-          <br /> jane.doe@paypal.com
+    <div class="col-md-3 my-3">
+      <div id="">
+          <div class="section-header">Payment Methods</div>   
+        <div class="container-fluid card" [@fadeInAnimation]="">
+          <div class="col-md-8 col-lg-6">
+            <img src="../assets/PayPa_logo.svg.png">
+            </div>
+            <div class="col-md-8 py-2">            
+              jane.doe@paypal.com
+            </div>
+
         </div>
       </div>
     </div>

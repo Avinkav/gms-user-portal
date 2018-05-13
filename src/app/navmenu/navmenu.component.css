@@ -1,11 +1,17 @@
 .main-nav-link{
 padding-left: 1rem;
 padding-right: 2rem;
+display: flex;
+align-items: center;
 }
 
 .mat-icon{
     color: rgba(0, 0, 0, 0.7);
     height: auto !important;
-    font-size: 1.2em;
-    margin-right: 2rem;
+    font-size: 20px;
+    margin-right: 1em;
+}
+
+mat-nav-list{
+    height: 100%;
 }

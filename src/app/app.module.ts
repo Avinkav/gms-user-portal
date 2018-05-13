@@ -39,6 +39,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatTreeModule,
+  MatTooltipModule
 } from '@angular/material';
 
 import {
@@ -70,6 +71,9 @@ import { BillingComponent } from './billing/billing.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BookLessonComponent } from './book-lesson/book-lesson.component';
 import { BillComponent } from './bill/bill.component';
+import { NotificationBarComponent } from './notification-bar/notification-bar.component';
+import {Ng2FabSpeedDialModule} from 'ng2-fab-speed-dial';
+import {SmdFabSpeedDialModule} from 'angular-speed-dial';
 
 @NgModule({
   declarations: [
@@ -85,6 +89,7 @@ import { BillComponent } from './bill/bill.component';
     BillingComponent,
     BookLessonComponent,
     BillComponent,
+    NotificationBarComponent
   ],
   imports: [
     BrowserModule,
@@ -108,9 +113,12 @@ import { BillComponent } from './bill/bill.component';
     LayoutModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTreeModule
+    MatTreeModule,
+    MatTooltipModule,
+    Ng2FabSpeedDialModule,
+    SmdFabSpeedDialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, NotificationBarComponent]
 })
 export class AppModule {}

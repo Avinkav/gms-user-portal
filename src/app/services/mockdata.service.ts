@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Instrument, instruments } from '../models/instrument';
+import { Instrument, instruments, borrowedInstruments } from '../models/instrument';
 import { Observable, of } from 'rxjs';
 
 
@@ -10,8 +10,12 @@ export class MockdataService {
 
   constructor() { }
 
+  getBorrowedInstruments(): Observable<Instrument[]> {
+    return of(borrowedInstruments);
+  }
+
   getInstruments(): Observable<Instrument[]> {
-    return of(instruments);
+    return of(shuffle(instruments));
   }
 
   getEvents() {
@@ -57,4 +61,23 @@ export class MockdataService {
     ]);
   }
 
+}
+
+function shuffle(array) {
+  let currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }

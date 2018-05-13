@@ -1,0 +1,8 @@
+<mat-toolbar class="notification-bar container" color="accent" [@slide]="isOn">
+  <p>You have a Levels class with Avicci on Saturday at 10.00pm</p>
+  <span class="flex-spacer"></span>
+    <button mat-button ><mat-icon>alarm</mat-icon><small>Remind me...</small></button>
+    <span matTooltip="Dismiss" >
+    <button mat-button (click)="isOn= 'false'"><mat-icon>close</mat-icon></button>
+  </span>
+</mat-toolbar>

@@ -1,12 +1,14 @@
-<app-main-toolbar [sideNav]="sideNav"></app-main-toolbar>
+<app-main-toolbar [sideNav]="sideNav" ></app-main-toolbar>
 <mat-sidenav-container class="full-container">
   <mat-sidenav #sideNav color="accent" [mode]="sideNavMode">
     <app-navmenu [sideNav]="sideNav"></app-navmenu>
     <mat-divider [vertical]="true"></mat-divider>
   </mat-sidenav>
-  <mat-sidenav-content >
-    <div class="transition-container">
-    <router-outlet #o="outlet"></router-outlet>
+  <mat-sidenav-content>
+    <div>
+      
+      <router-outlet #o="outlet"></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<app-notification-bar></app-notification-bar>>

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatSnackBar } from '@angular/material';
 import { routerTransition } from './animations/router-transition';
 
 @Component({
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   title = 'User Portal';
   sideNavMode = 'side';
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver, public snackBar: MatSnackBar) { }
 
   activateSmallLayout() {
     console.log('Changing layout to handset/tablet/small');
@@ -46,6 +46,7 @@ export class AppComponent implements OnInit {
       this.activateLargeLayout();
       }
     });
+
   }
 
   getState(outlet) {

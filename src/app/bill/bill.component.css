@@ -1,8 +1,13 @@
-.card{
+.d-flex{
+    align-items: baseline;
 }
 
-.mat-icon{
+.mat-icon-button{
     position: absolute;
-    top:16px;
-    right:16px;
+    top:0;
+    right: 0;
+}
+
+h1{
+    margin-right: 32px;
 }

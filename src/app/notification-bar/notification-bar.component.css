@@ -1,0 +1,31 @@
+.notification-bar {
+  position: fixed;
+  width: 90%;
+  left: 50%;
+  margin-left: -45%;
+  height: 96px;
+  bottom: 0px;
+  z-index: 10000;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  flex-wrap: wrap;
+  overflow: hidden;
+  line-height: 18px;
+}
+
+.notification-bar p{
+  margin-top:16px;
+  white-space: normal;
+}
+
+@media only screen and (min-width: 992px) {
+  .notification-bar {
+    width: 60%;
+    margin-left: -30%;
+    height: 48px;
+  }
+}
+  
+  

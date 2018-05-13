@@ -7,17 +7,26 @@ body .fc {
   border-radius: 0px;
 }
 
+
 .fc-day-grid-event {
   margin: 0px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px;
   font-size: 12px;
   font-weight: 400;
+  @include mat-elevation-transition;
+
+  &:hover{
+    @include mat-elevation(4);
+  }
 }
 
 .fc-day-grid-event .fc-time {
     font-size: 12px;
     font-weight: 400;
+}
+
+.fc-day-grid-event .fc-content{
+  white-space: unset;
 }
 
 .fc-state-default.fc-corner-left,
