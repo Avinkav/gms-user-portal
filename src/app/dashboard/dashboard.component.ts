@@ -20,6 +20,7 @@ import { fadeInAnimation } from '../animations/fadeInAnimation';
   styleUrls: ['./dashboard.component.css']})
 export class DashboardComponent implements OnInit {
 
+  open = false;
   public upToDate = true;
   events;
   @Input() outlet;
@@ -44,7 +45,7 @@ export class DashboardComponent implements OnInit {
       alert('test');
     });
   }
- 
+
   getState() {
     return 'test';
   }

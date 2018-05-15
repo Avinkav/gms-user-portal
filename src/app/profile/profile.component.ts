@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
-
+  editEnabled = false;
   separatorKeysCodes = [ENTER, COMMA];
 
   public instruments = [{
@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit {
 
   public user = {
     name: 'Jane Doe',
-    imageUrl: '../assets/portrait1.jpg'
+    imageUrl: 'assets/portrait1.jpg'
   };
 
   public languages = ['Swahili', 'Sanskrit', 'Latin'];
